@@ -1,9 +1,14 @@
 import React, {useState}from 'react'
 import { addJob } from '../services/apiService'
+import { toast } from 'react-toastify';
+import { useJobs } from '../context/JobContext';
 
-const   JobForm = ({onClose}) => {
+
+const JobForm = ({onClose, onSubmit, index}) => {
+  
 
   const [formData, setFormData] = useState({
+    no: (index + 1).toString(),
     jobTitle: '',
     companyName: '',
     location: '',
@@ -12,8 +17,10 @@ const   JobForm = ({onClose}) => {
     postedDate: '',
     lastDate: '',
     status: '',
+    logo: 'null'
    
 });
+const {setJobs} = useJobs()
 
 const handleChange = (e) => {
   const { name, value } = e.target;
@@ -23,20 +30,25 @@ const handleChange = (e) => {
   }));
 };
 
-// const handleFileChange = (e) => {
-//   setFormData(prevData => ({
-//     ...prevData,
-//     file: e.target.files[0]
-//   }));
-// };
+const handleFileChange = (e) => {
+  setFormData(prevData => ({
+    ...prevData,
+    file: e.target.files[0]
+  }));
+};
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+  const currentDate = new Date().toISOString().split('T')[0];
+  const updatedFormData = { ...formData, postedDate: currentDate };
 
 
   try {
-    const response = await addJob(formData); 
+    const response = await addJob(updatedFormData); 
     console.log('Job added:', response.data);
+    setJobs(prevJobs => [...prevJobs, response.data]);
+    await onSubmit(updatedFormData); 
+    toast.success('Job added successfully!');
 
     if(onClose){
       onClose()
@@ -83,7 +95,7 @@ const handleSubmit = async (e) => {
           className="w-full p-1 border border-gray-600 rounded bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-blue-500 box-border"
         />
       </div>
-      {/* <div className="mb-4">
+      <div className="mb-4">
         <label htmlFor="file-upload" className="block text-white text-sm mb-1">Image</label>
         <input
           type="file"
@@ -91,7 +103,7 @@ const handleSubmit = async (e) => {
           onChange={handleFileChange}
           className="w-full p-2 border border-gray-600 rounded bg-[#2A3042] text-white cursor-pointer flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-500 box-border"
         />
-      </div> */}
+      </div>
       <div className="mb-4">
         <label htmlFor="experience" className="block text-white text-sm mb-1">Experience</label>
         <input
@@ -111,8 +123,8 @@ const handleSubmit = async (e) => {
           className="w-full p-1 border border-gray-600 rounded bg-[#2A3042] text-white focus:outline-none focus:ring-2 focus:ring-blue-500 box-border"
         >
           <option value="all">All</option>
-          <option value="part-time">Part Time</option>
-          <option value="full-time">Full Time</option>
+          <option value="part-time">Part-Time</option>
+          <option value="full-time">Full-Time</option>
           <option value="freelance">Freelance</option>
         </select>
       </div>
@@ -134,8 +146,9 @@ const handleSubmit = async (e) => {
           onChange={handleChange}
           className="w-full p-1 border border-gray-600 rounded bg-[#2A3042] text-white focus:outline-none focus:ring-2 focus:ring-blue-500 box-border"
         >
-          <option value="close">Close</option>
-          <option value="new">New</option>
+          <option value="Active">Active</option>
+          <option value="Close">Close</option>
+          <option value="New">New</option>
         </select>
       </div>
       <div className="flex justify-end gap-2">

@@ -1,25 +1,21 @@
-
-import { RouterProvider } from "react-router-dom"
-import { routers } from "./routers"
-import './styles/index.css'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { routers } from './routers';
+import './styles/index.css';
 import { fetchJobs } from '../src/services/apiService';
-import { useJobs } from './context/JobContext'
-
-
-
-
+import { useJobs } from './context/JobContext';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-  const { setJobs } = useJobs()
-
+  const { setJobs } = useJobs();
 
   useEffect(() => {
     const getData = async () => {
       try {
         const data = await fetchJobs();
-
-        setJobs(data)
+        console.log('Fetched data:', data);
+        setJobs(data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -27,10 +23,11 @@ function App() {
 
     getData();
   }, [setJobs]);
-  return (
 
+  return (
     <div className="App">
       <RouterProvider router={routers} />
+      <ToastContainer />
     </div>
   );
 }

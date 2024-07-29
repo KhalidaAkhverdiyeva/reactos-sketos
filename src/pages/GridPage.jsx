@@ -2,7 +2,10 @@ import React from 'react'
 import { IoMdSearch } from "react-icons/io";
 import { FiFilter } from "react-icons/fi";
 import Card from '../components/Card'
+import { useJobs } from '../context/JobContext';
+
 const GridPage = () => {
+  const { jobs } = useJobs();
   return (
     <div className='text-white '>
 
@@ -29,17 +32,8 @@ const GridPage = () => {
           </div>
         </div>
         <div className='py-[20px] flex gap-5 flex-wrap'>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
+          <Card jobs= { jobs }/>
+         
         </div>
 
     </div>

@@ -3,12 +3,13 @@ import Table from '../components/Table'
 import { GrRefresh } from "react-icons/gr";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import Modal from '../components/ModalAdd'
-import { fetchJobs } from '../services/apiService';
+import { fetchJobs, deleteJob } from '../services/apiService';
+import { useJobs } from '../context/JobContext';
 
 
 const TablePage = () => {
     const [isModalOpen, setModalOpen] = useState(false);
-    const [jobs, setJobs] = useState([]);
+    const { jobs, setJobs } = useJobs();
 
     const openModal = () => setModalOpen(true);
     const handleCloseModal = () => {
@@ -28,6 +29,12 @@ const TablePage = () => {
     useEffect(() => {
         fetchJobsData(); 
     }, []);
+
+
+    const handleDelete = async (id) => {
+        await deleteJob(id);
+        setJobs(jobs.filter(job => job.id !== id));
+      };
 
   return (
     <div className=' text-white'>
@@ -81,6 +88,7 @@ const TablePage = () => {
                         <option className='bg-[#2A3042]' >All</option>
                         <option className='bg-[#2A3042]' >Full Time</option>
                         <option className='bg-[#2A3042]' >Part Time</option>
+                        <option className='bg-[#2A3042]' >Freelance</option>
                 </select>
             </div>
             <input type="text" className='bg-transparent border-[1px] border-[#353D55] px-[10px] rounded-md' placeholder='Select Time' />
@@ -89,7 +97,7 @@ const TablePage = () => {
        
    
     </div>
-    <Table jobs={jobs}/>
+    <Table jobs={jobs} onDelete={handleDelete}/>
     <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   )

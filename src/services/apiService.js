@@ -22,10 +22,23 @@ export const fetchJobs = async () => {
 export const addJob = async (newJob) => {
     try {
         const response = await axios.post(API_URL, newJob)
+
         return response
 
     } catch (error) {
         console.log('error while posting', error)
 
+    }
+}
+
+
+// DELETE A JOB
+
+export const deleteJob = async (id) => {
+    try {
+        const response = await axios.delete(`${API_URL}/${id}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error deleting job:', error);
     }
 }

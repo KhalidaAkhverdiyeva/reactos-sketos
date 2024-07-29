@@ -1,17 +1,32 @@
-import React from 'react'
+import React from 'react';
 import { HiOutlinePencil, HiOutlineTrash } from 'react-icons/hi';
+import classNames from 'classnames';
 
+const Table = ({ jobs, onDelete }) => {
+  const getStatusClass = (status) => {
+    return classNames({
+      'text-white px-2 py-1 font-bold whitespace-nowrap rounded-md text-[12px]': true,
+      'bg-[#34C38F]': status === 'Active',
+      'bg-[#F46A6A]': status === 'Close',
+      'bg-[#50A5F1]': status === 'New',
+    });
+  };
 
+  const getTypeClass = (type) => {
+    return classNames({
+      'px-2 py-1 whitespace-nowrap rounded-md text-[12px]': true,
+      'bg-[#34c38f2e] text-[#34c38f]': type === 'Full Time',
+      'bg-[#F0F0F0] text-[#333333]': type === 'Part Time',
+      'bg-[#50A5F1] text-[#ffffff]': type === 'All',
+      'bg-[#B0D9F2] text-[#003C71]': type === 'Freelance',
+    });
+  };
 
-
-const Table = ({ jobs }) => {
-   
-    
   return (
     <div className="bg-[#2A3042] p-[20px] overflow-x-auto">
       <table className="min-w-full table-fixed bg-[#2A3042] border-b border-[#353D55] rounded-md">
         <thead className='border-t border-[#353D55]'>
-          <tr className="text-[#A6B0CF] text-[14px] text-left ">
+          <tr className="text-[#A6B0CF] text-[14px] text-left">
             <th className="p-3 border-b border-[#353D55] w-[5%]">No</th>
             <th className="p-3 border-b border-[#353D55] w-[20%]">Job Description</th>
             <th className="p-3 border-b border-[#353D55] w-[15%]">Company Name</th>
@@ -24,40 +39,36 @@ const Table = ({ jobs }) => {
             <th className="p-3 border-b border-[#353D55] w-[10%]">Actions</th>
           </tr>
         </thead>
-        <tbody className="text-[#A6B0CF] text-[14px] ">
-
-            {jobs?.map((job)=>{
-
-                return (
-                    <tr className='border-b border-[#353D55]  '  >
-                        <td className="p-3 whitespace-nowrap ">{job.no}</td>
-                        <td className="p-3 whitespace-nowrap ">{job.jobTitle}</td>
-                        <td className="p-3 whitespace-nowrap ">{job.companyName}</td>
-                        <td className="p-3 whitespace-nowrap ">{job.location}</td>
-                        <td className="p-3 whitespace-nowrap ">{job.experience}</td>
-                        <td className="p-3 whitespace-nowrap ">
-                        <button className="bg-[#34c38f2e] text-[#34c38f]  px-1 whitespace-nowrap rounded-md text-[12px] ">{job.status}</button>
-                        
-                        </td>
-                        <td className="p-3 whitespace-nowrap ">{job.postedDate}</td>
-                        <td className="p-3 whitespace-nowrap ">{job.lastDate}</td>
-                        <td className="p-3 whitespace-nowrap ">
-                        <button className="bg-[#34C38F] text-white px-1 font-bold whitespace-nowrap rounded-md text-[12px] ">Active</button>
-                        </td>
-                        <td className="p-3 whitespace-nowrap  flex gap-2 items-center justify-center">
-                            <div className='bg-[#50a5f11a] p-[8px] rounded-md'> <HiOutlinePencil className="text-[#50a5f1] cursor-pointer" /></div>
-                            <div className='bg-[#f46a6a1a] p-[8px] rounded-md '> <HiOutlineTrash className="text-[#FF6F61] cursor-pointer" /></div>
-                       
-                        </td>
-                    </tr>
-                )
-            })}
-         
-         
+        <tbody className="text-[#A6B0CF] text-[14px]">
+          {jobs?.map((job) => (
+            <tr key={job.id} className='border-b border-[#353D55]'>
+              <td className="p-3 whitespace-nowrap">{job.no}</td>
+              <td className="p-3 whitespace-nowrap">{job.jobTitle}</td>
+              <td className="p-3 whitespace-nowrap">{job.companyName}</td>
+              <td className="p-3 whitespace-nowrap">{job.location}</td>
+              <td className="p-3 whitespace-nowrap">{job.experience}</td>
+              <td className="p-3 whitespace-nowrap">
+                <button className={getTypeClass(job.type)}>{job.type}</button>
+              </td>
+              <td className="p-3 whitespace-nowrap">{job.postedDate}</td>
+              <td className="p-3 whitespace-nowrap">{job.lastDate}</td>
+              <td className="p-3 whitespace-nowrap">
+                <button className={getStatusClass(job.status)}>{job.status}</button>
+              </td>
+              <td className="p-3 whitespace-nowrap flex gap-2 items-center justify-center">
+                <div className='bg-[#50a5f11a] p-[8px] rounded-md'>
+                  <HiOutlinePencil className="text-[#50a5f1] cursor-pointer" />
+                </div>
+                <div  onClick={() => onDelete(job.id)} className='bg-[#f46a6a1a] p-[8px] rounded-md'>
+                  <HiOutlineTrash className="text-[#FF6F61] cursor-pointer" />
+                </div>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
-  )
+  );
 }
 
-export default Table
+export default Table;

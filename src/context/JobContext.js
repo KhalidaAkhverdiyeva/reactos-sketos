@@ -14,5 +14,7 @@ export const JobProvider = ({ children }) => {
 }
 
 export const useJobs = () => {
+
     return useContext(JobContext)
+
 }
