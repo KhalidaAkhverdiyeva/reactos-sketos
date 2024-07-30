@@ -6,9 +6,9 @@ const API_URL = 'http://localhost:3000/jobs';
 
 //FETCH JOBS 
 
-export const fetchJobs = async () => {
+export const fetchJobs = async (query = '') => {
     try {
-        const response = await axios.get(API_URL);
+        const response = await axios.get(`${API_URL}?q=${query}`);
         return response.data;
     } catch (error) {
         console.error('Error fetching data:', error);

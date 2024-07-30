@@ -1,8 +1,9 @@
 import React from 'react';
 import { HiOutlinePencil, HiOutlineTrash } from 'react-icons/hi';
 import classNames from 'classnames';
+import { GrFormPrevious, GrFormNext } from 'react-icons/gr';
 
-const Table = ({ jobs, onDelete }) => {
+const Table = ({ jobs, onDelete, currentPage, totalPages, onPageChange }) => {
   const getStatusClass = (status) => {
     return classNames({
       'text-white px-2 py-1 font-bold whitespace-nowrap rounded-md text-[12px]': true,
@@ -20,6 +21,12 @@ const Table = ({ jobs, onDelete }) => {
       'bg-[#50A5F1] text-[#ffffff]': type === 'all',
       'bg-[#374D6B] text-[#50A5F1]': type === 'freelance',
     });
+  };
+
+  const handlePageChange = (pageNumber) => {
+    if (pageNumber > 0 && pageNumber <= totalPages) {
+      onPageChange(pageNumber);
+    }
   };
 
   return (
@@ -59,7 +66,7 @@ const Table = ({ jobs, onDelete }) => {
                 <div className='bg-[#50a5f11a] p-[8px] rounded-md'>
                   <HiOutlinePencil className="text-[#50a5f1] cursor-pointer" />
                 </div>
-                <div  onClick={() => onDelete(job.id)} className='bg-[#f46a6a1a] p-[8px] rounded-md'>
+                <div onClick={() => onDelete(job.id)} className='bg-[#f46a6a1a] p-[8px] rounded-md'>
                   <HiOutlineTrash className="text-[#FF6F61] cursor-pointer" />
                 </div>
               </td>
@@ -67,8 +74,31 @@ const Table = ({ jobs, onDelete }) => {
           ))}
         </tbody>
       </table>
+      <div className='flex justify-end gap-3 py-3 items-center'>
+        <div
+          className={`bg-slate-600 w-[30px] h-[30px] rounded-full flex justify-center items-center cursor-pointer ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+          onClick={() => handlePageChange(currentPage - 1)}
+        >
+          <GrFormPrevious />
+        </div>
+        {Array.from({ length: totalPages }, (_, index) => (
+          <div
+            key={index + 1}
+            className={`w-[30px] h-[30px] rounded-full flex justify-center items-center cursor-pointer ${currentPage === index + 1 ? 'bg-[#556EE6]' : 'bg-slate-600'}`}
+            onClick={() => handlePageChange(index + 1)}
+          >
+            {index + 1}
+          </div>
+        ))}
+        <div
+          className={`bg-slate-600 w-[30px] h-[30px] rounded-full flex justify-center items-center cursor-pointer ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
+          onClick={() => handlePageChange(currentPage + 1)}
+        >
+          <GrFormNext />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default Table;

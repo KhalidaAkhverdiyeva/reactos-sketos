@@ -24,7 +24,7 @@
       "postedDate": "2023-05-25",
       "lastDate": "2024-04-15",
       "status": "New",
-      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/adobe.18e56447696e4920ce55f2008547dba4.svg"
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/adobe-photoshop.1fb5c34343073e70e33683f7e1917857.svg"
     },
     {
       "id": "3",
@@ -37,7 +37,7 @@
       "postedDate": "2023-05-25",
       "lastDate": "2024-04-15",
       "status": "New",
-      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/adobe.18e56447696e4920ce55f2008547dba4.svg"
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/airbnb.c9f6f43d5cd777ae2a2ab458fc9309de.svg"
     },
     {
       "id": "4",
@@ -50,7 +50,7 @@
       "postedDate": "2024-07-30",
       "lastDate": "2024-08-02",
       "status": "New",
-      "logo": "null"
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/amazon.47de085da2d8c24b32724b0ec057402a.svg"
     },
     {
       "id": "5",
@@ -62,8 +62,8 @@
       "type": "part time",
       "postedDate": "2024-07-30",
       "lastDate": "2024-09-22",
-      "status": "New",
-      "logo": "null"
+      "status": "Active",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/mailchimp.f75e1d7ee98b015d5ceb9b9c6216d2d0.svg"
     },
     {
       "id": "6",
@@ -76,7 +76,7 @@
       "postedDate": "2024-07-30",
       "lastDate": "2024-05-12",
       "status": "Close",
-      "logo": "null"
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/adobe.18e56447696e4920ce55f2008547dba4.svg"
     },
     {
       "id": "7",
@@ -89,7 +89,7 @@
       "postedDate": "2024-07-30",
       "lastDate": "2024-07-02",
       "status": "New",
-      "logo": "null"
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/adobe-photoshop.1fb5c34343073e70e33683f7e1917857.svg"
     },
     {
       "id": "8",
@@ -102,8 +102,282 @@
       "postedDate": "2024-07-30",
       "lastDate": "2024-12-11",
       "status": "Active",
-      "logo": "null"
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/line.8af92af9b5e3996484a46bef4e7f81bd.svg"
+    },
+    {
+      "id": "9",
+      "no": "9",
+      "jobTitle": "Senior Doctor",
+      "companyName": "Goddy Hospital",
+      "location": "NYC",
+      "experience": "10+ years",
+      "type": "full time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-12-11",
+      "status": "New",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/airbnb.c9f6f43d5cd777ae2a2ab458fc9309de.svg"
+    },
+    {
+      "id": "10",
+      "no": "10",
+      "jobTitle": "Junior Florist",
+      "companyName": "Flowy Cafe",
+      "location": "Brooklyn",
+      "experience": "no experience",
+      "type": "part time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2023-16-21",
+      "status": "Close",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/adobe-photoshop.1fb5c34343073e70e33683f7e1917857.svg"
+    },
+    {
+      "id": "11",
+      "no": "11",
+      "jobTitle": "Marketing Director",
+      "companyName": "Adobe Agency",
+      "location": "California",
+      "experience": "2+ years",
+      "type": "freelance",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-12-11",
+      "status": "Active",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/amazon.47de085da2d8c24b32724b0ec057402a.svg"
+    },
+    {
+      "id": "12",
+      "no": "12",
+      "jobTitle": "Magento Developer",
+      "companyName": "Adobe Agency",
+      "location": "NYC",
+      "experience": "2-5 years",
+      "type": "full time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-12-11",
+      "status": "Active",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/flutter.f0ee577433160fa19746210d554c6c0d.svg"
+    },
+    {
+      "id": "13",
+      "no": "13",
+      "jobTitle": "Marketing Director",
+      "companyName": "Adobe Agency",
+      "location": "Phoenix",
+      "experience": "3+ years",
+      "type": "part time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-12-11",
+      "status": "New",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/airbnb.c9f6f43d5cd777ae2a2ab458fc9309de.svg"
+    },
+    {
+      "id": "14",
+      "no": "14",
+      "jobTitle": "Magento Developer",
+      "companyName": "Themesbrand",
+      "location": "California",
+      "experience": "0-2 years",
+      "type": "full time",
+      "postedDate": "2023-02-05",
+      "lastDate": "2023-04-05",
+      "status": "Active",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/adobe.18e56447696e4920ce55f2008547dba4.svg"
+    },
+    {
+      "id": "15",
+      "no": "15",
+      "jobTitle": "Product Designer",
+      "companyName": "Web Technology pvt.ltd",
+      "location": "Phoenix",
+      "experience": "1-2 years",
+      "type": "part time",
+      "postedDate": "2023-05-25",
+      "lastDate": "2024-04-15",
+      "status": "New",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/adobe.18e56447696e4920ce55f2008547dba4.svg"
+    },
+    {
+      "id": "16",
+      "no": "16",
+      "jobTitle": "Marketing Director",
+      "companyName": "Creative Agency",
+      "location": "Phoenix",
+      "experience": "-",
+      "type": "full time",
+      "postedDate": "2023-05-25",
+      "lastDate": "2024-04-15",
+      "status": "New",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/adobe-photoshop.1fb5c34343073e70e33683f7e1917857.svg"
+    },
+    {
+      "id": "17",
+      "no": "17",
+      "jobTitle": "HTML Developer",
+      "companyName": "Web Technology pvt.ltd",
+      "location": "California",
+      "experience": "0-4 years",
+      "type": "freelance",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-08-02",
+      "status": "New",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/mailchimp.f75e1d7ee98b015d5ceb9b9c6216d2d0.svg"
+    },
+    {
+      "id": "18",
+      "no": "18",
+      "jobTitle": "Product Sales Specialist",
+      "companyName": "Skote Technology pvt.Ltd",
+      "location": "Louisiana",
+      "experience": "5+ years",
+      "type": "part time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-09-22",
+      "status": "Active",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/flutter.f0ee577433160fa19746210d554c6c0d.svg"
+    },
+    {
+      "id": "19",
+      "no": "19",
+      "jobTitle": "Magento Developer",
+      "companyName": "New Technology pvt.ltd",
+      "location": "Lakridge Lane Richardson",
+      "experience": "0-2 years",
+      "type": "freelance",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-05-12",
+      "status": "Close",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/line.8af92af9b5e3996484a46bef4e7f81bd.svg"
+    },
+    {
+      "id": "20",
+      "no": "20",
+      "jobTitle": "Business Associate",
+      "companyName": "Web Technology pvt.ltd",
+      "location": "California",
+      "experience": "0-2 years",
+      "type": "full time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-07-02",
+      "status": "New",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/mailchimp.f75e1d7ee98b015d5ceb9b9c6216d2d0.svg"
+    },
+    {
+      "id": "21",
+      "no": "21",
+      "jobTitle": "Magento Developer",
+      "companyName": "Adobe Agency",
+      "location": "California",
+      "experience": "2+ years",
+      "type": "part time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-12-11",
+      "status": "Active",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/spotify.eefab5a9268d3721c294c608709c049e.svg"
+    },
+    {
+      "id": "22",
+      "no": "22",
+      "jobTitle": "Senior Doctor",
+      "companyName": "Goddy Hospital",
+      "location": "NYC",
+      "experience": "10+ years",
+      "type": "full time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-12-11",
+      "status": "New",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/airbnb.c9f6f43d5cd777ae2a2ab458fc9309de.svg"
+    },
+    {
+      "id": "23",
+      "no": "23",
+      "jobTitle": "Junior Florist",
+      "companyName": "Flowy Cafe",
+      "location": "Brooklyn",
+      "experience": "no experience",
+      "type": "part time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2023-16-21",
+      "status": "Close",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/amazon.47de085da2d8c24b32724b0ec057402a.svg"
+    },
+    {
+      "id": "24",
+      "no": "24",
+      "jobTitle": "Marketing Director",
+      "companyName": "Adobe Agency",
+      "location": "California",
+      "experience": "2+ years",
+      "type": "freelance",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-12-11",
+      "status": "Active",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/spotify.eefab5a9268d3721c294c608709c049e.svg"
+    },
+    {
+      "id": "25",
+      "no": "25",
+      "jobTitle": "Magento Developer",
+      "companyName": "Adobe Agency",
+      "location": "NYC",
+      "experience": "2-5 years",
+      "type": "full time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-12-11",
+      "status": "Active",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/line.8af92af9b5e3996484a46bef4e7f81bd.svg"
+    },
+    {
+      "id": "26",
+      "no": "26",
+      "jobTitle": "Marketing Director",
+      "companyName": "Adobe Agency",
+      "location": "Phoenix",
+      "experience": "3+ years",
+      "type": "part time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-12-11",
+      "status": "New",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/spotify.eefab5a9268d3721c294c608709c049e.svg"
+    },
+    {
+      "id": "27",
+      "no": "27",
+      "jobTitle": "Mid Marketing Director",
+      "companyName": "YG Entertainement",
+      "location": "California",
+      "experience": "1-2 years",
+      "type": "full time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-12-11",
+      "status": "Active",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/line.8af92af9b5e3996484a46bef4e7f81bd.svg"
+    },
+    {
+      "id": "28",
+      "no": "28",
+      "jobTitle": "Mid Marketing Director",
+      "companyName": "Spotify",
+      "location": "California",
+      "experience": "no experience",
+      "type": "full time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-12-11",
+      "status": "Active",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/flutter.f0ee577433160fa19746210d554c6c0d.svg"
+    },
+    {
+      "id": "29",
+      "no": "29",
+      "jobTitle": "Mid Marketing Director",
+      "companyName": "Flora Agency",
+      "location": "California",
+      "experience": "2+ years",
+      "type": "full time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-12-11",
+      "status": "Close",
+      "logo": "https://skote-v-dark.react.themesbrand.com/static/media/mailchimp.f75e1d7ee98b015d5ceb9b9c6216d2d0.svg"
     }
+
     
     
   ]
