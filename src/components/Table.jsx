@@ -15,10 +15,10 @@ const Table = ({ jobs, onDelete }) => {
   const getTypeClass = (type) => {
     return classNames({
       'px-2 py-1 whitespace-nowrap rounded-md text-[12px]': true,
-      'bg-[#34c38f2e] text-[#34c38f]': type === 'Full Time',
-      'bg-[#F0F0F0] text-[#333333]': type === 'Part Time',
-      'bg-[#50A5F1] text-[#ffffff]': type === 'All',
-      'bg-[#B0D9F2] text-[#003C71]': type === 'Freelance',
+      'bg-[#34c38f2e] text-[#34c38f]': type === 'full time',
+      'bg-[#F0F0F0] text-[#333333]': type === 'part time',
+      'bg-[#50A5F1] text-[#ffffff]': type === 'all',
+      'bg-[#B0D9F2] text-[#003C71]': type === 'freelance',
     });
   };
 

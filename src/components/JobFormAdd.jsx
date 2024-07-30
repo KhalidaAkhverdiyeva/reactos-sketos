@@ -1,14 +1,11 @@
-import React, {useState}from 'react'
-import { addJob } from '../services/apiService'
+import React, { useState } from 'react';
+import { addJob } from '../services/apiService';
 import { toast } from 'react-toastify';
 import { useJobs } from '../context/JobContext';
 
-
-const JobForm = ({onClose, onSubmit, index}) => {
-  
-
+const JobForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
-    no: (index + 1).toString(),
+    no: '',
     jobTitle: '',
     companyName: '',
     location: '',
@@ -17,51 +14,37 @@ const JobForm = ({onClose, onSubmit, index}) => {
     postedDate: '',
     lastDate: '',
     status: '',
-    logo: 'null'
-   
-});
-const {setJobs} = useJobs()
+    logo: 'null',
+  });
 
-const handleChange = (e) => {
-  const { name, value } = e.target;
-  setFormData(prevData => ({
-    ...prevData,
-    [name]: value
-  }));
-};
+  const { setJobs } = useJobs();
 
-const handleFileChange = (e) => {
-  setFormData(prevData => ({
-    ...prevData,
-    file: e.target.files[0]
-  }));
-};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const currentDate = new Date().toISOString().split('T')[0];
-  const updatedFormData = { ...formData, postedDate: currentDate };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const currentDate = new Date().toISOString().split('T')[0];
+    const updatedFormData = { ...formData, postedDate: currentDate };
 
+    try {
+      const response = await addJob(updatedFormData);
+      console.log('Job added:', response.data);
+      setJobs((prevJobs) => [...prevJobs, response.data]);
+      toast.success('Job added successfully!');
 
-  try {
-    const response = await addJob(updatedFormData); 
-    console.log('Job added:', response.data);
-    setJobs(prevJobs => [...prevJobs, response.data]);
-    await onSubmit(updatedFormData); 
-    toast.success('Job added successfully!');
-
-    if(onClose){
-      onClose()
+      if (onClose) {
+        onClose(); 
+      }
+    } catch (error) {
+      console.error('Error adding job:', error);
     }
-   
- 
-  } catch (error) {
-    console.error('Error adding job:', error);
-
-  }
-
-};
-
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -93,15 +76,6 @@ const handleSubmit = async (e) => {
           value={formData.location}
           onChange={handleChange}
           className="w-full p-1 border border-gray-600 rounded bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-blue-500 box-border"
-        />
-      </div>
-      <div className="mb-4">
-        <label htmlFor="file-upload" className="block text-white text-sm mb-1">Image</label>
-        <input
-          type="file"
-          id="file-upload"
-          onChange={handleFileChange}
-          className="w-full p-2 border border-gray-600 rounded bg-[#2A3042] text-white cursor-pointer flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-500 box-border"
         />
       </div>
       <div className="mb-4">
@@ -160,8 +134,7 @@ const handleSubmit = async (e) => {
         </button>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default JobForm
-
+export default JobForm;
