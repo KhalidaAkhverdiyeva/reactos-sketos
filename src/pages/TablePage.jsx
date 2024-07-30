@@ -5,11 +5,35 @@ import { HiOutlineDotsVertical } from "react-icons/hi";
 import Modal from '../components/ModalAdd'
 import { fetchJobs, deleteJob } from '../services/apiService';
 import { useJobs } from '../context/JobContext';
+import debounce from 'lodash.debounce';
 
 
 const TablePage = () => {
     const [isModalOpen, setModalOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
     const { jobs, setJobs } = useJobs();
+    const [filteredJobs, setFilteredJobs] = useState(jobs);
+    
+
+
+    const debouncedSearch = debounce ((query) =>{
+        setSearchQuery(query)
+
+    },300)
+
+    useEffect(() => {
+   
+        setFilteredJobs(
+          jobs.filter(job =>
+            job.jobTitle.toLowerCase().includes(searchQuery.toLowerCase())
+          )
+        );
+      }, [searchQuery, jobs]);
+
+
+      const handleSearchChange = (event) => {
+        debouncedSearch(event.target.value);
+      };
 
     const openModal = () => setModalOpen(true);
     const handleCloseModal = () => {
@@ -72,7 +96,7 @@ const TablePage = () => {
                         <option className='bg-[#2A3042]' value="Show 40">Show 40</option>
                 </select>
             </div>
-            <input type="text" placeholder='Search for.. ' className='bg-transparent focus:outline-none border-[1px] border-[#353D55] rounded-md px-[15px] w-[377px]' />
+            <input onChange={handleSearchChange} type="text" placeholder='Search for.. ' className='bg-transparent focus:outline-none border-[1px] border-[#353D55] rounded-md px-[15px] w-[377px]' />
             <div className=' border-[#353D55] border-[1px]  px-[15px] py-[5px] w-[176px]  rounded-md'> 
                 <select className='bg-transparent w-[150px] focus:outline-none text-[14px]'>
                         <option className='bg-[#2A3042]' disabled selected >Status</option>
@@ -97,7 +121,8 @@ const TablePage = () => {
        
    
     </div>
-    <Table jobs={jobs} onDelete={handleDelete}/>
+    {/* jobs={jobs} */}
+    <Table  jobs={filteredJobs} onDelete={handleDelete}/>
     <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   )

@@ -40,8 +40,8 @@
       "logo": "https://skote-v-dark.react.themesbrand.com/static/media/adobe.18e56447696e4920ce55f2008547dba4.svg"
     },
     {
-      "id": "7738",
-      "no": "3",
+      "id": "4",
+      "no": "4",
       "jobTitle": "HTML Developer",
       "companyName": "Web Technology pvt.ltd",
       "location": "California",
@@ -51,6 +51,60 @@
       "lastDate": "2024-08-02",
       "status": "New",
       "logo": "null"
+    },
+    {
+      "id": "5",
+      "no": "5",
+      "jobTitle": "Product Sales Specialist",
+      "companyName": "Skote Technology pvt.Ltd",
+      "location": "Louisiana",
+      "experience": "5+ years",
+      "type": "part time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-09-22",
+      "status": "New",
+      "logo": "null"
+    },
+    {
+      "id": "6",
+      "no": "6",
+      "jobTitle": "Magento Developer",
+      "companyName": "New Technology pvt.ltd",
+      "location": "Lakridge Lane Richardson",
+      "experience": "0-2 years",
+      "type": "freelance",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-05-12",
+      "status": "Close",
+      "logo": "null"
+    },
+    {
+      "id": "7",
+      "no": "7",
+      "jobTitle": "Business Associate",
+      "companyName": "Web Technology pvt.ltd",
+      "location": "California",
+      "experience": "0-2 years",
+      "type": "full time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-07-02",
+      "status": "New",
+      "logo": "null"
+    },
+    {
+      "id": "8",
+      "no": "8",
+      "jobTitle": "Magento Developer",
+      "companyName": "Adobe Agency",
+      "location": "California",
+      "experience": "2+ years",
+      "type": "part time",
+      "postedDate": "2024-07-30",
+      "lastDate": "2024-12-11",
+      "status": "Active",
+      "logo": "null"
     }
+    
+    
   ]
 }
